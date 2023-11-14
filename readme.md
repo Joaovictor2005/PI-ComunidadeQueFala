@@ -5,5 +5,7 @@ O projeto ComunidadeQueFala tem como objetivo ser um site onde os cidadãos pode
 TECNOLOGIAS:
 
 Banco de dados MySQL
+
 Backend - NodeJs
+
 Frotend - React
