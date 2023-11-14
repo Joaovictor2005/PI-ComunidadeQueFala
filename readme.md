@@ -1,1 +1,1 @@
-Olá programadores 
+O projeto Sanea tem como objetivo ser um site onde os cidadões das cidades poderam fazer suas reclamções e as prefeituras darão feedback a acerca das reclamações 
