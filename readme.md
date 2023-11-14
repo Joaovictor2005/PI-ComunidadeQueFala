@@ -9,3 +9,10 @@ Banco de dados MySQL
 Backend - NodeJs
 
 Frotend - React
+
+INTEGRANTES:
+
+Kauã Lima 
+João Gabriel Batista
+Esdras Menezes
+João Victor
