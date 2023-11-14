@@ -13,6 +13,9 @@ Frotend - React
 INTEGRANTES:
 
 Kauã Lima 
+
 João Gabriel Batista
+
 Esdras Menezes
+
 João Victor
