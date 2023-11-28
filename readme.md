@@ -1,4 +1,4 @@
-# Projeto ComunidadeQueFala
+![Design sem nome (1)](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/50675595/5d23eda9-aa66-4eac-b83f-5c4c5ec6470d)
 
 <strong align="center"> 
     :construction:  Projeto em construção  :construction:
