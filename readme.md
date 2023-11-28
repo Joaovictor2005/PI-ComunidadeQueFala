@@ -1,8 +1,6 @@
 ![Design sem nome (1)](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/50675595/5d23eda9-aa66-4eac-b83f-5c4c5ec6470d)
 
-<strong align="center"> 
-    :construction:  Projeto em construção  :construction:
-</strong>
+![Static Badge](https://img.shields.io/badge/Stauts-em_andamento-yellow)
 
 ## 🎯 Descrição:
 O projeto ComunidadeQueFala tem como objetivo ser um site onde os cidadãos poderão fazer suas reclamações sobre problemas urbanos. 
