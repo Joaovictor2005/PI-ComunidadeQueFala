@@ -18,7 +18,7 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 - Retorno da resolução do problema: O usuário será informado da aprovação, correção e finalização da reclamação.
 - Solucionar ou não problemas: emojis para representar o resultado.
 ## 🧱 Estrutura:
-
+[diagrama](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/issues/1#issue-2015614526)
 
 ## 🖥️ Tecnologias:
 
