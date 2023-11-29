@@ -9,6 +9,17 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 
 ##  🔨 Funcionalidades:
 <span align=“center”> 🚧 Tópico em construção 🚧 </span>
+- Cadastro do usuário:  Possibilitar a criação de uma conta através de nome, telefone, data de nascimento, cpf, endereço, email e senha. Apenas pessoas a partir de 18 anos de idade podem criar cadastro.
+- Login do usuário: Possibilitar login por meio do Google, mas também por inscrição direta por meio de email/senha. Opção de recuperação de senha.
+- Cadastro de reclamação:  Área destinada ao usuário fazer a queixa sobre o problema. Dentro da mesma, será possível indicar o local do problema, descrevê-lo, selecionar a categoria do problema e adicionar fotos e/ou vídeos relacionados ao problema.
+- Busca de reclamações: filtros…
+- Listagem de reclamações: Área destinada ao encontro de todas as reclamações já realizadas pelo usuário, tendo na mesma o local da reclamação, categoria do problema, data da reclamação, prazo de entrega e status.
+- Comentários:  Local onde a prefeitura/empresas e usuários podem fazer comentários e dar feedback.
+- Retorno da resolução do problema: O usuário será informado da aprovação, correção e finalização da reclamação.
+- Solucionar ou não problemas: emojis para representar o resultado.
+## 🧱 Estrutura:
+
+
 ## 🖥️ Tecnologias:
 
 | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width=115><br><sub>React</sub>](https://github.com/joaovictor2005) | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width=115><br><sub>NodeJs</sub>](https://github.com/joaovictor2005) |  [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width=115><br><sub>MySql</sub>](https://google.com)| 
