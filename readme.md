@@ -18,8 +18,10 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 - Retorno da resolução do problema: O usuário será informado da aprovação, correção e finalização da reclamação.
 - Solucionar ou não problemas: emojis para representar o resultado.
 ## 🧱 Estrutura:
-[diagrama](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/issues/1#issue-2015614526)
 
+![PaginasSite](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/f9aa5044-887e-4f7a-9fa8-a4682865d5a1)
+## 💀 Esqueleto:
+## 🗺️ Superfície:
 ## 🖥️ Tecnologias:
 
 | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width=115><br><sub>React</sub>](https://github.com/joaovictor2005) | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width=115><br><sub>NodeJs</sub>](https://github.com/joaovictor2005) |  [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width=115><br><sub>MySql</sub>](https://google.com)| 
