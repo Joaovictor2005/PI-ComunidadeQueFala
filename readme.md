@@ -22,13 +22,17 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 
 ![PaginasSite](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/f9aa5044-887e-4f7a-9fa8-a4682865d5a1)
 ## 💀 Esqueleto:
+
 ## 🗺️ Superfície:
 ![Style Tile](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/c5970e2e-6b26-41d9-bb2c-c52a18caf044)
+## 📄 Modelo lógico do banco de dados (MySql):
+![modeloBD](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/50675595/faca890c-5b22-44fa-b862-5dc376f74913)
+
 ## 🖥️ Tecnologias:
 
 | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width=115><br><sub>React</sub>](https://github.com/joaovictor2005) | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width=115><br><sub>NodeJs</sub>](https://github.com/joaovictor2005) |  [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width=115><br><sub>MySql</sub>](https://google.com)| 
 | :---: | :---: | :---: | 
-
+## 📖 Figma:
 ## 📂 Acesso ao projeto: 
 <span align=“center”>🚧 Tópico em construção 🚧 </span>
 ## 👨‍💻 Autores:
