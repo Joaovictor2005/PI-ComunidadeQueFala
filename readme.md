@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-O projeto Comunidade Que Fala tem como objetivo ser um site onde os cidadões das cidades poderam fazer suas reclamações e as prefeituras darão feedback a acerca das reclamações 
-=======
+
 ![Design sem nome (1)](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/50675595/5d23eda9-aa66-4eac-b83f-5c4c5ec6470d)
 
 ![Static Badge](https://img.shields.io/badge/Stauts-em_andamento-yellow)
@@ -45,4 +43,4 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 ## 👨‍💻 Autores:
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/50675595?s=96&v=4" width=115><br><sub>João Victor Oliveira</sub>](https://github.com/joaovictor2005) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/134461147?v=4" width=115><br><sub>João Gabriel Batista</sub>](https://github.com/joaogabrielbatista) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112483659?v=4" width=115><br><sub>Kauã Lima</sub>](https://github.com/kaua1711) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/150805195?v=4" width=115><br><sub>Esdras Menezes</sub>](https://github.com/esdrasmenezes) |
 | :---: | :---: | :---: | :---: |
->>>>>>> dfabdf09f5a7888bab0ccc02a80a78d0210a8957
+
