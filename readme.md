@@ -37,7 +37,6 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 
 | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width=115><br><sub>React</sub>](https://github.com/joaovictor2005) | [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width=115><br><sub>NodeJs</sub>](https://github.com/joaovictor2005) |  [<img loading="lazy" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width=115><br><sub>MySql</sub>](https://google.com)| 
 | :---: | :---: | :---: | 
-## 📖 Figma:
 ## 📂 Acesso ao projeto: 
 <span align=“center”>🚧 Tópico em construção 🚧 </span>
 ## 👨‍💻 Autores:
