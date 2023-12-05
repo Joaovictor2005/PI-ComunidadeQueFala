@@ -1,0 +1,86 @@
+*{
+    color: #1A202C;
+}
+body{
+    background-color: #F6F7F9;
+}
+
+#root{
+    height: 90vh;
+}
+
+h1{
+    color: #3563E9;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    height: 100%;
+}
+
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid #3563E9;
+    padding-left: 20px;
+    width: 70%;
+    align-self: center;
+    margin-left: -20px;
+}
+
+.buttonFooter{
+    align-self: center;
+    margin-top: auto;
+}
+
+label {
+    font-weight: 600;
+}
+
+.inputLogin{
+    border-radius: 15px;
+    height: 30px;
+    flex-shrink: 0;
+    padding: 5px;
+    background: #e7e5e7;
+    font-weight: 500;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.button{
+    background: #3563E9;
+    border-radius: 999px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 6px 10px;
+    border: none;
+}
+
+.buttonEsqueceuSenha{
+    font-weight: 300;
+    align-self: center;
+    text-decoration: none;
+}
+
+.buttonCadastro{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    align-self: center;
+    text-wrap: pretty;
+    text-decoration: none;
+    text-align: center;
+}
+
+.spanError{
+    color: red;
+    align-self: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-top: -10px;
+}

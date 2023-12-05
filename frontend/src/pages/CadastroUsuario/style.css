@@ -1,0 +1,81 @@
+.header{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 20px;
+    height: 60px;
+}
+
+.header h1{
+    font-size: 26px;
+}
+
+.margemHeader{
+    display: block;
+    margin-top: 60px;
+}
+
+.titulo{
+    padding-top: 3px;
+}
+.form{
+    background-color: white;
+    padding: 5px 15px;
+    margin: 0px 10px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.divCheckbox{
+    background: #F6F7F9;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+.checkbox{
+    width: 30px;
+    margin-right: 10px;
+}
+.buttonCadastro{
+    width: 90%;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.spanPermissionSafeDados{
+    font-weight: 600;
+    font-size: 18px;
+    margin: 5px 0px;
+}
+
+.spanPermissionSafeDados2{
+    font-size: 14px;
+    padding: 8px;
+}
+
+.iconSafe{
+    margin-top: 10px;
+}
+
+.erroCheckbox{
+    border: 0.5px solid red;
+}
+
+.inputErrorCheckbox{
+    margin-top: 10px !important;
+}

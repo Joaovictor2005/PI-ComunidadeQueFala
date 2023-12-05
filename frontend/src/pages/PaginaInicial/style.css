@@ -1,0 +1,86 @@
+.container{
+    margin-top: 60px;
+    padding-top: 10px;
+}
+
+.containerFiltros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.imagemFiltro{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(195,212, 233, 0.4);
+}
+
+.buttoFilter{
+    background: #3563E9;
+    border-radius: 999px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 3px 5px;
+    border: none; 
+}
+
+.containerReclamacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reclamacao{
+    width: 80%;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #FFF;
+    height: 80px;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloReclamacao{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.categoriaReclamacao{
+    color: #90A3BF;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.statusReclamacao{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.like{
+
+}
+.numberLikes{
+
+}
+
+.space-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error{
+    border: 0.5px solid red;
+}
+
+.inputError{
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
