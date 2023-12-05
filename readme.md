@@ -25,6 +25,8 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 
 ![PaginasSite](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/f9aa5044-887e-4f7a-9fa8-a4682865d5a1)
 ## 💀 Esqueleto:
+![WhatsApp Image 2023-12-04 at 10 07 50 PM](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/6b5d3404-d81a-46af-8ac5-9736cf6f88d9)
+![WhatsApp Image 2023-12-04 at 10 07 50 PM (1)](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/e3f71080-e42a-4498-8bd7-590b74850cd8)
 
 ## 🗺️ Superfície:
 ![Style Tile](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/c5970e2e-6b26-41d9-bb2c-c52a18caf044)
