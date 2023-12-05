@@ -33,7 +33,7 @@ fastify.register(require("./routes/favoritos"));
 fastify.register(require("./routes/atualizacaoReclamacao"));
 fastify.register(require("./routes/comentarios"));
 
-fastify.listen({ port: 3000 }, (err) => {
+fastify.listen({ port: 80 }, (err) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
