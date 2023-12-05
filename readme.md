@@ -8,6 +8,9 @@ As prefeituras e empresas responsáveis darão feedback acerca das reclamações
 
 
 ## 🙍🙍‍♀️ Proto-personas:
+![WhatsApp Image 2023-11-30 at 8 08 14 PM](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/0ab6fa8d-6151-4738-a8fd-cebceac2a4aa)
+![WhatsApp Image 2023-11-30 at 8 08 13 PM](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/f05a4b17-68f0-42b9-879d-75c4222df817)
+![WhatsApp Image 2023-11-30 at 8 08 12 PM](https://github.com/Joaovictor2005/PI-ComunidadeQueFala/assets/134461147/be1a84e6-ca44-4c7f-ae3c-fb294e4f91f3)
 ##  🔨 Funcionalidades:
 <span align=“center”> 🚧 Tópico em construção 🚧 </span>
 - **Cadastro do usuário**:  Possibilitar a criação de uma conta através de nome, telefone, data de nascimento, cpf, endereço, email e senha. Apenas pessoas a partir de 18 anos de idade podem criar cadastro.
