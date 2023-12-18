@@ -84,7 +84,7 @@ async function routes(fastify, options) {
   })
 
   fastify.post("/departamento", async (req, res) => {
-    //try{
+    try{
         var {departamento, email, senha, descricao, endereco_idendereco, logo} = req.body
         if(await Departamentos.findOne({where: {email}})){
             res.code(400).send({message: "Email já cadastrado"})
@@ -96,9 +96,9 @@ async function routes(fastify, options) {
         departamento = await Departamentos.create({departamento, email, senha, descricao, endereco_idendereco, logo})
         const {iddepartamento} = departamento
         res.code(200).send({message: "Departamento criado com sucesso", iddepartamento})
-    //}catch(err){
-    //res.code(400).send({message: "Não foi possivel cadastrar o departamento"})
-    //}
+    }catch(err){
+    res.code(400).send({message: "Não foi possivel cadastrar o departamento"})
+    }
   })
 
   fastify.put("/departamento", { onRequest: [fastify.authenticate] },async (req, res) => {

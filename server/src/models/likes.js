@@ -15,4 +15,7 @@ Likes.belongsTo(User, {
     allowNull: false
 })
 
+Reclamacao.hasMany(Likes, {foreignKey: 'reclamacao_idreclamacao'});
+User.hasMany(Likes, {foreignKey: 'usuario_idusuario'});
+
 module.exports = Likes

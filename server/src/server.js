@@ -21,19 +21,21 @@ fastify.decorate("authenticate", async function (req, res) {
 });
 
 fastify.register(require('@fastify/multipart'))
+fastify.register(require('@fastify/cors'))
 fastify.register(require("@fastify/jwt"), { secret: "comunidade",});
 
-fastify.register(require("./routes/user"));
-fastify.register(require("./routes/auth"));
-fastify.register(require("./routes/upload"));
-fastify.register(require("./routes/departamento"));
-fastify.register(require("./routes/reclamacao"));
-fastify.register(require("./routes/likes"));
-fastify.register(require("./routes/favoritos"));
-fastify.register(require("./routes/atualizacaoReclamacao"));
-fastify.register(require("./routes/comentarios"));
+fastify.register(require("./routes/user"), {prefix: '/api'});
+fastify.register(require("./routes/auth"), {prefix: '/api'});
+fastify.register(require("./routes/upload"), {prefix: '/api'});
+fastify.register(require("./routes/departamento"), {prefix: '/api'});
+fastify.register(require("./routes/reclamacao"), {prefix: '/api'});
+fastify.register(require("./routes/likes"), {prefix: '/api'});
+fastify.register(require("./routes/favoritos"), {prefix: '/api'});
+fastify.register(require("./routes/atualizacaoReclamacao"), {prefix: '/api'});
+fastify.register(require("./routes/comentarios"), {prefix: '/api'});
+fastify.register(require("./routes/categorias"), {prefix: '/api'});
 
-fastify.listen({ port: 80 }, (err) => {
+fastify.listen({ port: 3301 }, (err) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);

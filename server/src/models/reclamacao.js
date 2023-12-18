@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../configBD.js'); // Certifique-se de que o caminho está correto
 
 const Categorias = require('./categorias')
@@ -18,12 +18,13 @@ const Reclamacao = sequelize.define('reclamacao', {
   },
   data_reclamacao: {
     type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: sequelize.NOW
+    allowNull: true,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
   },
   status: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true,
+    defaultValue: 0
   }
 }, {
   timestamps: false,

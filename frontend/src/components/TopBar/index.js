@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from "react";
-
+import api from '../../services/api'
 import iconMenu from '../../assets/menu.png'
 import imageUser from '../../assets/imagemUser.png'
 import { useNavigate } from "react-router-dom";
+import { Avatar } from "@mui/material";
 export default function TopBar(){
     const navigate = useNavigate()
     const [menu, setMenu] = useState(false)
+    const [avatar, setAvatar] = useState('')
+    const [nome, setNome] = useState('')
 
     const handleChangeMenu = () => {
         setMenu(!menu)
@@ -55,7 +58,8 @@ export default function TopBar(){
         position: 'fixed',
         left: '-240px',
         transition: 'left 0.5s',
-        opacity: '0.9'
+        opacity: '1',
+        borderColorRight: '#000'
     }
 
     const styleMenuLateralActivited = {
@@ -112,19 +116,49 @@ export default function TopBar(){
         alignItems: 'flex-start'
     }
 
+    const getCookie = (name) => {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+          const [cookieName, cookieValue] = cookie.trim().split('=');
+          if (cookieName === name) {
+            return cookieValue;
+          }
+        }
+        return null;
+      };
+
+    const getUserInfos = async () => {
+        try{
+            await api.get('/user/profile', {
+                headers: {
+                    Authorization: `Bearer ${getCookie('token')}`
+                }
+            }).then( (response) => {
+                setNome(response.data.nome_completo)
+                setAvatar(response.data.imagem_perfil)
+            })
+        }catch{
+            console.log("Erro ao buscar informações do usuário")
+        }
+    }
+
+    useEffect( () => {
+        getUserInfos()
+    }, [])
+
     return(
         <div>
         <div style={styleDiv}>
             <img onClick={handleChangeMenu} src={iconMenu} width="35px" height="35px" />
             <h1 style={styleH1}>ComunidadeQueFala</h1>
-            <img onClick={handlePerfil} src={imageUser} style={styleImgUser}/>
+            <Avatar onClick={handlePerfil} src={avatar} style={styleImgUser}/>
         </div>
         <div style={ menu?styleMenuLateralActivited:styleMenuLateral }>
 
             <div style={StyleContainerMenuLateral} onClick={handlePerfil}>
                 <div style={StyleContainerProfile}>
-                    <img src={imageUser} style={styleImgUser}/>
-                    <h4 style={styleH4}>João Victor Soares Oliveira</h4>
+                    <Avatar src={avatar} style={styleImgUser} />
+                    <h4 style={styleH4}>{nome}</h4>
                 </div>  
                 <span style={styleSpanPerfil}>Ver perfil</span>
             </div>
@@ -132,7 +166,7 @@ export default function TopBar(){
             <button onClick={handleCadastro} style={styleButton}>CADASTRAR RECLAMAÇÃO</button>
 
             <div style={styleDivLinks}>
-                <span style={styleLinkMenuLateral}>Todas as reclamações</span>
+                <span onClick={ () => navigate('/usuario')} style={styleLinkMenuLateral}>Todas as reclamações</span>
                 <span style={styleLinkMenuLateral}>Reclamações favoritadas</span>
                 <span style={styleLinkMenuLateral}>Departamentos</span>
             </div>

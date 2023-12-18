@@ -61,7 +61,7 @@ async function routes(fastify, options) {
 
   fastify.put("/user", { onRequest: [fastify.authenticate] }, async (req, res) => {
     try{
-      var {nome_completo, data_nascimento, email, telefone, cep, cidade_idcidade, bairro, endereco, numero, complemento, pontoReferencia } = req.body;
+      var {nome_completo, data_nascimento, email, telefone, cep, estado, cidade, bairro, endereco, numero, complemento, pontoReferencia } = req.body;
     
       const userGet = await User.findByPk(req.user.sub)
 
@@ -71,6 +71,14 @@ async function routes(fastify, options) {
         res.code(400).send({message: "Email já existente no banco de dados"})
         return 
       }
+
+      //Cidade
+      var cidade_create = await Cidade.findOne({where: {estado, cidade}})
+      if(!cidade_create){
+        await Cidade.create({estado, cidade})
+      }
+
+      const cidade_idcidade = cidade_create.idcidade
 
       //Atualização do endereço
       const {endereco_idendereco} = userGet
@@ -140,25 +148,34 @@ async function routes(fastify, options) {
 
   fastify.post("/user", async (req, res) => {
     try{
-    var {nome_completo, data_nascimento, email, senha, cpf, telefone, imagem_perfil, cep, cidade_idcidade, bairro, endereco, numero, complemento, pontoReferencia } = req.body;
-    
-    if(await User.findOne({where: {email}})){
-      res.code(400).send({message: "Email já existente. Faça login"})
-      return 
-    }
-    if(await User.findOne({where: {cpf}})){
-      res.code(400).send({message: "CPF já existente. Faça login"})
-      return 
-    }
+      var {nome_completo, data_nascimento, email, senha, cpf, telefone, imagem_perfil, cep, estado, cidade, bairro, endereco, numero, complemento, pontoReferencia } = req.body;
+      
+      if(await User.findOne({where: {email}})){
+        res.code(400).send({message: "Email já existente. Faça login"})
+        return 
+      }
+      if(await User.findOne({where: {cpf}})){
+        res.code(400).send({message: "CPF já existente. Faça login"})
+        return 
+      }
 
-    const enderecoCreate = await Endereco.create({cep, cidade_idcidade, bairro, endereco, numero, complemento, pontoReferencia})
-    const endereco_idendereco = enderecoCreate.idendereco
-    
-    senha = await bcrypt.hash(senha, saltRounds)//Criptografar senha
+      //Cidade
+      var cidade_create = await Cidade.findOne({where: {estado, cidade}})
+      if(!cidade_create){
+        cidade_create = await Cidade.create({estado, cidade})
+      }
 
-    const user = await User.create({ nome_completo, data_nascimento, email, senha, cpf, telefone, imagem_perfil, endereco_idendereco});
-    const userId = user.idusuario;
-    res.send({ success: true, message: "Usuário criado com sucesso", userId });
+      const cidade_idcidade = cidade_create.idcidade
+
+      //Endereço
+      const enderecoCreate = await Endereco.create({cep, cidade_idcidade, bairro, endereco, numero, complemento, pontoReferencia})
+      const endereco_idendereco = enderecoCreate.idendereco
+      
+      senha = await bcrypt.hash(senha, saltRounds)//Criptografar senha
+
+      const user = await User.create({ nome_completo, data_nascimento, email, senha, cpf, telefone, imagem_perfil, endereco_idendereco});
+      const userId = user.idusuario;
+      res.send({ success: true, message: "Usuário criado com sucesso", userId });
     }catch(err){
       res.code(400).send({message: "Erro na criação do usuário"})
     }

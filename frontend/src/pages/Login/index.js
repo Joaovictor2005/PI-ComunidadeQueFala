@@ -40,6 +40,13 @@ export default function Login(){
           return Object.keys(novosErros).length === 0;
     }
 
+    const setCookie = (name, value, days) => {
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + days);
+        const cookieValue = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/`;
+        document.cookie = cookieValue;
+    };
+
     const handleEntrar = async () => {
         if(!validateForm()){
             return
@@ -58,6 +65,8 @@ export default function Login(){
                     setErro(true)
                 }
             }else if(response.status == 200){
+                console.log(response.data)
+                setCookie('token', response.data, 7)
                 navigate("/usuario")
             }   
         })

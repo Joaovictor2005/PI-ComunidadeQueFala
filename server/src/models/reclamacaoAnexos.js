@@ -15,4 +15,7 @@ ReclamacaoAnexo.belongsTo(Anexos, {
     allowNull: false
 })
 
-module.exports = Reclamacao
+Reclamacao.hasMany(ReclamacaoAnexo, {foreignKey: 'reclamacao_idreclamacao'});
+Anexos.hasMany(ReclamacaoAnexo, {foreignKey: 'anexos_idanexos'});
+
+module.exports = ReclamacaoAnexo

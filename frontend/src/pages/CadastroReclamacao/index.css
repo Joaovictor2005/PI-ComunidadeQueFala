@@ -1,0 +1,28 @@
+.MuiSvgIcon-root.Mui-completed, .MuiSvgIcon-root.Mui-active { 
+    fill: blue;
+} 
+
+.selectDescricao{
+    background: #F6F7F9;
+}
+
+.anexarArquivos{
+    background-color: white;
+    border-radius: 10px;
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.MuiOutlinedInput-notchedOutline{
+    border: none !important;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+}
