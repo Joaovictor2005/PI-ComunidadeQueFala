@@ -20,6 +20,14 @@ fastify.decorate("authenticate", async function (req, res) {
   }
 });
 
+fastify.decorate("authenticatePass", async function (req, res) {
+  try {
+    await req.jwtVerify();
+  } catch (err) {
+    req.user = null
+  }
+});
+
 fastify.register(require('@fastify/multipart'))
 fastify.register(require('@fastify/cors'))
 fastify.register(require("@fastify/jwt"), { secret: "comunidade",});

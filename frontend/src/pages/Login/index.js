@@ -108,7 +108,7 @@ export default function Login(){
                 <button className='button' onClick={handleEntrar}>ENTRAR</button>
             </div>
 
-            <Link className='buttonFooter'>Continuar sem cadastro</Link>
+            <Link to='/usuario' className='buttonFooter'>Continuar sem cadastro</Link>
         </div>
     )
 }

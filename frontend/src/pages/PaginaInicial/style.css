@@ -28,21 +28,36 @@
 .containerReclamacoes{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     margin-top: 10px;
 }
 
-.reclamacao{
-    width: 80%;
+.containerReclamacao {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
     border: 2px solid red;
     border-radius: 10px;
-    padding: 10px;
-    background-color: #FFF;
-    height: 80px;
-    margin: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.infosReclamacao{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.infosDentroReclamacao{
+    display: flex;
+    flex-direction: column;
+}
+
+.infosDentroReclamacaoBaixo{
+    display: flex;
+    flex-direction: row;
 }
 
 .tituloReclamacao{
@@ -61,11 +76,22 @@
     font-weight: 600;
 }
 
-.like{
-
+.dataReclamacao{
+    font-size: 12px;
+    color: #90A3BF;
 }
-.numberLikes{
+.containerLike {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15%;
+}
 
+.numberLike{
+    font-size: 14px;
+    color: #90A3BF;
+    font-weight: 'bold';
 }
 
 .space-between{

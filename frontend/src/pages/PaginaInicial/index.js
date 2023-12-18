@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import {Box, Grid, Paper, Typography, ButtonBase} from '@mui/material'
+import {Box, Grid, Paper, Typography, ButtonBase, Modal} from '@mui/material'
 import { styled } from '@mui/material/styles';
 
 import './style.css'
 import TopBar from "../../components/TopBar";
-import Rodape from "../../components/Rodape";
+
 
 import imageFilter from '../../assets/filter.svg'
 import ImagemProblema from '../../assets/buraco.jpg'
-import AlertIcon from '../../assets/alertIcon.svg'
+import AlertIcon from '../../assets/a1.png'
+import AlertIconAmarelo from '../../assets/b1.png'
+
+import ErrorIcon from '@mui/icons-material/Error';
+
+
+import api from "../../services/api";
+
+import { useNavigate } from "react-router-dom";
 
 const Img = styled('img')({
     margin: 'auto',
@@ -19,8 +27,72 @@ const Img = styled('img')({
   });
 
 export default function PaginaInicial(){
-    const [reclamacoes, setReclamacoes] = useState([1,2,3])
+    const navigate = useNavigate()
+    const [reclamacoes, setReclamacoes] = useState([])
+    const [modalError, setModalError] = useState('')
 
+    useEffect( () => {
+      getReclamacoes()
+    }, [])
+
+    const getReclamacoes = async () => {
+      try{
+        await api.get('/reclamacoes').then( (response) => {
+          console.log(response.data)
+          setReclamacoes(response.data)
+        })
+      }catch{
+        console.log("Erro ao buscar as reclamações")
+      }
+    }
+
+    function formatarData(dataString) {
+      const data = new Date(dataString);
+      const dia = String(data.getDate()).padStart(2, '0');
+      const mes = String(data.getMonth() + 1).padStart(2, '0'); // Lembre-se que os meses começam do zero
+      const ano = data.getFullYear();
+    
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function statusById(status){
+      if(status == 0){
+        return "Pendente"
+      }else if(status == 1){
+        return "Atrasado"
+      }else if(status == 2){
+        return "Concluído"
+      }
+    }
+
+    function getColorStatus(status){
+      if(status == 0){
+        return 'orange'
+      }else if(status == 1){
+        return 'red'
+      }else if(status == 2){
+        return 'green'
+      }
+    }
+
+    const handleLike = async (idreclamacao) => {
+      try{
+        await api.post('/like', {idreclamacao} ).then( (response) => {
+
+          setReclamacoes((reclamacoesAntigas) =>
+            reclamacoesAntigas.map((reclamacao) =>
+              reclamacao.idreclamacao == idreclamacao
+                ? { ...reclamacao, userIsLike: true, numLikes: reclamacao.numLikes + 1 }
+                : reclamacao
+            )
+          );
+
+        })
+      }catch{
+        setModalError("Faça login para poder dar like na reclamação")
+        console.log("Erro ao dar like na reclamação")
+      }
+    }
     return(
         <div>
             <TopBar />
@@ -33,69 +105,45 @@ export default function PaginaInicial(){
                 </div>
 
                 <div className="containerReclamacoes">
-                    <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={0}>
                 {reclamacoes.map( (reclamacao) => {
                         return(
-                            
-                            <Paper
-                            sx={{
-                              p: 2,
-                              margin: 'auto',
-                              maxWidth: 500,
-                              flexGrow: 1,
-                              border: '1px solid red', 
-                              backgroundColor: (theme) =>
-                                theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-                            }}
-                          >
-                            <Grid item container spacing={2}>
-                              
-                              <Grid item xs={6} sm container>
-                                <Grid item xs container direction="column" spacing={2}>
-                                  <Grid item xs>
-                                    <Typography gutterBottom variant="subtitle1" component="div">
-                                      Av. Cipriano Santos 468
-                                    </Typography>
-                                    <Typography variant="body2" gutterBottom>
-                                      Buraco no asfalto
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                      Atrasado
-                                    </Typography>
-                                  </Grid>
-                                  <Grid item direction='columm'>
-                                    <Typography variant="subtitle1" component="div" sx={{textAlign: 'right'}}>
-                                        <ButtonBase >
-                                            <Img alt="complex" src={AlertIcon} width={40}/>
-                                        </ButtonBase>
-                                        <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                                            10
-                                        </Typography>
-                                    </Typography>
+                            <div style={{borderColor: getColorStatus(reclamacao.status) }} className="containerReclamacao">
+                              <div className="infosReclamacao" onClick={ (e) => {e.stopPropagation();navigate(`/reclamacao/${reclamacao.idreclamacao}`)}}>
+                                <div className="infosDentroReclamacao">
+                                  <span className="tituloReclamacao">{reclamacao.endereco}</span>
+                                  <span className="categoriaReclamacao">{reclamacao.categoria}</span>
+                                </div>
 
-                                    <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                                      01/01/23
-                                    </Typography>
-                                    
-                                  </Grid>
-                                </Grid>
-                              </Grid>
+                                <div className="infosDentroReclamacao">
+                                  <span style={{color: getColorStatus(reclamacao.status) }} className="statusReclamacao">{statusById(reclamacao.status)}</span>
+                                  <span className="dataReclamacao">{formatarData(reclamacao.data_reclamacao)}</span>
+                                </div>
+                              </div>
 
-                              <Grid item xs={6}>
-                                <ButtonBase >
-                                  <Img alt="complex" src={ImagemProblema} />
-                                </ButtonBase>
-                              </Grid>
-                            </Grid>
-                          </Paper>
-                            
+                              <div className="containerLike" onClick={(e) => {e.stopPropagation();handleLike(reclamacao.idreclamacao)}}>
+                                <div >
+                                {reclamacao.userIsLike ? <span><img src={AlertIconAmarelo} style={{width: '42px'}}/></span> : <span><img src={AlertIcon} style={{width: '38px'}}/></span> }
+                                </div>
+                                <span className="numberLike">{reclamacao.numLikes}</span>
+                              </div>
+
+                              <img onClick={ (e) => {e.stopPropagation();navigate(`/reclamacao/${reclamacao.idreclamacao}`)}} style={{alignItems: 'right', width: "40%"}} src={ImagemProblema} />
+                            </div>
                         )
                     })}
-                    </Grid>
-                    </Box>
+                    
                 </div>
             </div>
+
+            <Modal open={modalError} onClose={ () => setModalError('')} >
+                <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 250, bgcolor: 'background.paper', border: 'none', boxShadow: 24, p: 4, display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+                    <ErrorIcon sx={{fill: 'red', fontSize: 50}} />
+                    
+                    <Typography style={{fontWeight: '600', textAlign: 'center', fontSize: '18px'}}>Erro ao dar like na reclamação</Typography>
+                    <Typography style={{ textAlign: 'center', fontSize: '14px'}}>{modalError}</Typography>
+                </Box>
+            </Modal>
+
         </div>
     )
 }

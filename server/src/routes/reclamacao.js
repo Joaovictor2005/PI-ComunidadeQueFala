@@ -11,7 +11,7 @@ const ReclamacaoAnexos = require('../models/reclamacaoAnexos');
 const sequelize = require("../configBD");
 
 async function routes(fastify, options) {
-    fastify.get("/reclamacoes", async (req, res) => {
+    fastify.get("/reclamacoes", { onRequest: [fastify.authenticatePass] }, async (req, res) => {
       try{
           const reclamacoes = await Reclamacao.findAll({include: [{model: Categorias}, {model: Departamento, include: [{model: Anexos}]}, { model: Endereco, include: [{model: Cidade}]  }, {model: Likes}, {model: ReclamacaoAnexos, include: [{model: Anexos}]} ]})
 
@@ -41,7 +41,7 @@ async function routes(fastify, options) {
 
               numLikes: reclamacao.likes.length,
  
-              userIsLike: reclamacao.likes.some( like => like.usuario_idusuario === idUsuario),
+              userIsLike: reclamacao.likes.some( like => like.usuario_idusuario == idUsuario),
 
             }
           })

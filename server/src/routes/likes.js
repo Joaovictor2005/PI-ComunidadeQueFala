@@ -50,12 +50,17 @@ async function routes(fastify, options) {
         try{
             const idusuario = req.user.sub
             const { idreclamacao } = req.body
-            if( (await Likes.findOne({where: {usuario_idusuario: idusuario, reclamacao_idreclamacao: idreclamacao}})) ){
-                res.code(400).send({message: "Like já efetuado"})
+
+            var like = await Likes.findOne({where: {usuario_idusuario: idusuario, reclamacao_idreclamacao: idreclamacao}})
+
+            if( like ){
+                await like.destroy()
+                res.code(200).send({message: "Like Deletado"})
                 return null
             }
-            const like = await Likes.create({usuario_idusuario: idusuario, reclamacao_idreclamacao: idreclamacao})
-            res.code(200).send({message: "Like dado"})
+            
+            like = await Likes.create({usuario_idusuario: idusuario, reclamacao_idreclamacao: idreclamacao})
+            res.code(200).send({message: "Like Efetuado"})
             }catch(err){
             res.code(400).send({message: "Erro ao dar like"})
         }
