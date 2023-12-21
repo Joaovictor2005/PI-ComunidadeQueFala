@@ -1,4 +1,4 @@
-const Favoritos = require('../models/Favoritos');
+const Favoritos = require('../models/favoritos');
 
 async function routes(fastify, options) {
     fastify.get('/favoritos/user', { onRequest: [fastify.authenticate] }, async(req, res) => {

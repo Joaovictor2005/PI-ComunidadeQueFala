@@ -59,7 +59,8 @@ export default function TopBar(){
         left: '-240px',
         transition: 'left 0.5s',
         opacity: '1',
-        borderColorRight: '#000'
+        borderColorRight: '#000',
+        zIndex: '1000'
     }
 
     const styleMenuLateralActivited = {

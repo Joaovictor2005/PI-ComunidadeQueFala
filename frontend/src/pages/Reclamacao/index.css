@@ -1,0 +1,138 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.imagens,
+.informacoes,
+.descricao,
+.comentarios{
+    background-color: white;
+    width: 90%;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.spanReclamacao{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.spanStatus{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.avatarResponsavel{
+    margin: 0px 5px;
+}
+
+.spanEndereco{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.spanBold{
+    font-weight: bold;
+}
+
+.spanData{
+    font-weight: 200;
+    font-size: 14px;
+}
+.containerTextoDescricao{
+    background-color: #F6F7F9;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.divInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.5px solid black;
+    padding-top: 10px;
+}
+
+.spanTitulo{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputComentario{
+    border-radius: 20px;
+    border: 0.5px solid black;
+    height: 25px;
+    width: 75%;
+    background-color: #F6F7F9;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.comentariosUsuarios{
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.comentario{
+    display: flex;
+    flex-direction: column;
+}
+
+.infosComentario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infosComentarioUsuario{
+    display: flex;
+    flex-direction: row;
+}
+
+.divComentario{
+    background-color: #F6F7F9;
+    padding: 10px;
+    border-radius: 0px 20px 20px 20px;
+    width: 86%;
+    align-self: end;
+    word-wrap: break-word;
+}
+
+.comentarioNome{
+    font-size: 15px;
+    font-weight: 550;
+    align-self: center;
+    margin-left: 5px;
+}
+
+.comentarioData{
+    font-size: 12px;
+    font-weight: lighter;
+    align-self: center;
+}

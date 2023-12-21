@@ -6,11 +6,12 @@ import { styled } from '@mui/material/styles';
 import './style.css'
 import TopBar from "../../components/TopBar";
 
-
 import imageFilter from '../../assets/filter.svg'
 import ImagemProblema from '../../assets/buraco.jpg'
 import AlertIcon from '../../assets/a1.png'
 import AlertIconAmarelo from '../../assets/b1.png'
+
+import SemImagem from '../../assets/semImagen.png'
 
 import ErrorIcon from '@mui/icons-material/Error';
 
@@ -99,8 +100,8 @@ export default function PaginaInicial(){
             
             <div className="container">
                 <div className="containerFiltros">
-                    <button className="buttoFilter">No seu estado</button>
-                    <button className="buttoFilter">No seu estado</button>
+                    <button className="buttoFilter buttonFilterAlerta">Em alerta</button>
+                    <button className="buttoFilter">Recentes</button>
                     <img className="imagemFiltro" src={imageFilter}/>
                 </div>
 
@@ -126,8 +127,8 @@ export default function PaginaInicial(){
                                 </div>
                                 <span className="numberLike">{reclamacao.numLikes}</span>
                               </div>
-
-                              <img onClick={ (e) => {e.stopPropagation();navigate(`/reclamacao/${reclamacao.idreclamacao}`)}} style={{alignItems: 'right', width: "40%"}} src={ImagemProblema} />
+                              
+                              <img onClick={ (e) => {e.stopPropagation();navigate(`/reclamacao/${reclamacao.idreclamacao}`)}} style={{alignItems: 'right', width: "40%"}} src={reclamacao.imagem_capa ? reclamacao.imagem_capa : SemImagem} />
                             </div>
                         )
                     })}

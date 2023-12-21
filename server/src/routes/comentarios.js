@@ -1,11 +1,24 @@
+const Anexos = require('../models/anexos')
 const Comentarios = require('../models/comentario')
+const User = require('../models/user')
 
 async function routes(fastify){
     fastify.get('/comentarios/reclamacao/:id', async(req, res) => {
         try{
             const {id} = req.params
-            const comentarios = await Comentarios.findAll({where: {reclamacao_idreclamacao: id}})
-            res.code(200).send(comentarios)
+            const comentarios = await Comentarios.findAll({where: {reclamacao_idreclamacao: id}, include: [{model: User, include: [Anexos]}]})
+
+            const comentariosResponse = comentarios.map(comentario => {
+                return {
+                    idcomentario: comentario.idcomentario,
+                    data: comentario.data,
+                    comentario: comentario.comentario,
+                    nome_usuario: comentario.usuario.nome_completo,
+                    foto_perfil_usuario: comentario.usuario.anexo ? comentario.usuario.anexo.url : null
+                }
+            })
+
+            res.code(200).send(comentariosResponse)
         }catch(err){
             res.code(400).send({message: "Erro ao buscar os comentários da reclamação"})
         }
